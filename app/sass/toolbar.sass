@@ -1,0 +1,44 @@
+.toolbar
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 5
+  .settings
+    display: inline-block
+    position: absolute
+    top: -15px
+    border-radius: 50%
+    overflow: hidden
+    transform: scale(0.3)
+    box-shadow: 0px 0px 4px #000
+    transition: all 0.2s ease
+    border: 2px solid #111
+    &:focus
+      transform: scale(0.5)
+      transition: all 0.2s ease
+
+.weather-widget
+  position: absolute
+  right: 20px
+  .clock
+    display: inline-block
+    color: #fff
+    font-size: 70px
+    font-weight: 300
+    border-right: 1px solid #444
+    margin: 0px 20px
+    padding: 0px 20px
+    span
+      font-size: 20px
+  .wi
+    color: #fff
+    font-size: 64px
+    margin-right: 10px
+  .info
+    padding-top: 20px
+    display: inline-block
+    color: #fff
+    font-size: 28px
+    & > strong
+      font-size: 16px

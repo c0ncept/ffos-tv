@@ -1,0 +1,61 @@
+@import './sass/icons.css'
+@import './sass/variables.sass'
+
+html,body
+  font-family: 'Ubuntu', sans-serif
+  font-size: 1em
+  height: 100%
+
+*
+  box-sizing: border-box
+  padding: 0px
+  margin: 0px
+
+body
+  background: $bgColor
+
+\:focus
+  outline: none
+
+.application
+  position: relative
+  height: 100%
+
+a
+  text-decoration: none
+  color: $textColor
+
+.content
+  height: 100%
+
+.dialog
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: row
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 15
+  background: radial-gradient(#000, rgba(0,0,0,0.9), #000)
+  .window
+    background: #444
+    border: 2px solid #828282
+    font-size: 18px
+    padding: 20px
+    color: #fff
+    .button
+      text-align: center
+      text-transform: uppercase
+      margin: 20px 0px 0px 0px
+      padding: 5px 10px
+      border: 1px solid #fff
+      &:focus
+        background: #fff
+        color: #000
+
+
+@import './sass/home-page.sass'
+@import './sass/toolbar.sass'

@@ -1,0 +1,21 @@
+{
+    "extends": ["standard", "plugin:react/recommended"],
+    "installedESLint": true,
+    "plugins": [
+        "react",
+        "standard",
+        "promise"
+    ],
+    "rules" : {
+      "semi" : [ "error", "always" ],
+      "standard/object-curly-even-spacing": [2, "either"],
+       "react/react-in-jsx-scope": 0
+    },
+    "globals" : {
+      "describe" : true,
+      "it" : true,
+      "window" : true,
+      "document" : true,
+      "h" : true
+    }
+}

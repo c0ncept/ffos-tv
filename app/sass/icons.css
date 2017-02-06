@@ -1,0 +1,83 @@
+.icons {
+  background-image: url('./icons.png');
+}
+.sprite-0 {
+  background-position: -32px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-1 {
+  background-position: -32px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-2 {
+  background-position: -32px -336px;
+  width: 142px;
+  height: 142px;
+}
+.sprite-3 {
+  background-position: -32px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-4 {
+  background-position: -242px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-5 {
+  background-position: -242px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-6 {
+  background-position: -242px -337px;
+  width: 143px;
+  height: 140px;
+}
+.sprite-7 {
+  background-position: -242px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-8 {
+  background-position: -452px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-9 {
+  background-position: -452px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-10 {
+  background-position: -452px -335px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-11 {
+  background-position: -452px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-12 {
+  background-position: -658px -492px;
+  width: 151px;
+  height: 141px;
+}
+.sprite-13 {
+  background-position: -662px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-14 {
+  background-position: -662px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-15 {
+  background-position: -662px -335px;
+  width: 143px;
+  height: 143px;
+}
