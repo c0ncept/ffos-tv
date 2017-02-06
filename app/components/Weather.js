@@ -64,7 +64,7 @@ const WeatherComponent = Cream.extend({
     fetch('https://freegeoip.net/json/')
       .then((resp) => resp.json())
       .then((ipdata) => {
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' +
+        fetch('https://secret-ocean-49799.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=' +
           ipdata.country_code.toLowerCase() + ',' + ipdata.city +
           '&units=imperial' + '&appid=558bdce4b8d202bebd12734ff3582c27')
           .then((resp) => resp.json())
