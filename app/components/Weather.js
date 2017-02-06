@@ -1,27 +1,5 @@
 import {Cream} from 'cakejs2-spatial';
 
-const WeatherComponent = Cream.extend({
-  _namespace: 'components.weather',
-
-  init () {
-    /* global fetch */
-    fetch('//freegeoip.net/json/')
-      .then((resp) => resp.json())
-      .then((ipdata) => {
-        fetch('//api.openweathermap.org/data/2.5/weather?q=' +
-          ipdata.country_code.toLowerCase() + ',' + ipdata.city +
-          '&units=imperial' + '&appid=558bdce4b8d202bebd12734ff3582c27')
-          .then((resp) => resp.json())
-          .then((weather) => {
-            this.set('ipdata', ipdata);
-            this.set('weather', weather);
-          });
-      });
-  }
-});
-
-WeatherComponent.init();
-
 function resolve (desc) {
   var icon = '';
   switch (desc) {
@@ -59,33 +37,58 @@ function resolve (desc) {
       break;
   }
   return icon;
-};
+}
 
-function updateTime () {
+function getTime () {
   let today = new Date();
   let h = today.getHours();
   let m = today.getMinutes();
   let s = today.getSeconds();
-  h = checkTime(h);
-  m = checkTime(m);
-  s = checkTime(s);
+  h = pad(h);
+  m = pad(m);
+  s = pad(s);
 
-  WeatherComponent.set('time', { h, m, s });
-
-  setTimeout(updateTime, 1000);
+  return { h, m, s };
 }
 
-function checkTime (i) {
+function pad (i) {
   if (i < 10) { i = '0' + i; };  // add zero in front of numbers < 10
   return i;
 }
 
-updateTime();
+const WeatherComponent = Cream.extend({
+  _namespace: 'components.weather',
+
+  init () {
+    /* global fetch */
+    fetch('//freegeoip.net/json/')
+      .then((resp) => resp.json())
+      .then((ipdata) => {
+        fetch('//api.openweathermap.org/data/2.5/weather?q=' +
+          ipdata.country_code.toLowerCase() + ',' + ipdata.city +
+          '&units=imperial' + '&appid=558bdce4b8d202bebd12734ff3582c27')
+          .then((resp) => resp.json())
+          .then((weather) => {
+            this.set('ipdata', ipdata);
+            this.set('weather', weather);
+          });
+      });
+  },
+
+  updateTime () {
+    this.set('time', getTime());
+  }
+});
+
+WeatherComponent.init();
 
 export default function Weather () {
+  WeatherComponent.updateTime();
+
   const weather = WeatherComponent.get('weather');
   const ipdata = WeatherComponent.get('ipdata');
-  const t = WeatherComponent.get('time');
+  const time = WeatherComponent.get('time');
+
   let iconCls = 'wi';
 
   if (weather) {
@@ -96,7 +99,7 @@ export default function Weather () {
 
   return (<div className="weather-widget">
     <div className="clock">
-      { t.h } : { t.m } <span>{t.s}</span>
+      { time.h } : { time.m } <span>{time.s}</span>
     </div>
     <div className={iconCls}></div>
     {ipdata &&

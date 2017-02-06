@@ -1,4 +1,4 @@
-import {Cream} from 'cakejs2-spatial';
+import {Cream, inject} from 'cakejs2-spatial';
 import Scrollabl from './Scrollabl';
 import Reset from './Reset';
 
@@ -7,6 +7,7 @@ import Weather from './Weather';
 Cream.extend({
   _namespace: 'pages.home',
   isDialogShown: false,
+  weatherComponent: inject('components.weather'),
 
   toggleDialog () {
     this.set('isDialogShown', !this.isDialogShown);
@@ -16,6 +17,7 @@ Cream.extend({
     if (this.isDialogShown) {
       dom.sn.focus(this.btnEl);
     }
+    setTimeout(this.get('weatherComponent').updateTime, 1000);
   },
 
   render () {
