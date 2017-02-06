@@ -1,0 +1,276 @@
+.icons {
+  background-image: url(assets/icons.png);
+}
+.sprite-0 {
+  background-position: -32px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-1 {
+  background-position: -32px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-2 {
+  background-position: -32px -336px;
+  width: 142px;
+  height: 142px;
+}
+.sprite-3 {
+  background-position: -32px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-4 {
+  background-position: -242px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-5 {
+  background-position: -242px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-6 {
+  background-position: -242px -337px;
+  width: 143px;
+  height: 140px;
+}
+.sprite-7 {
+  background-position: -242px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-8 {
+  background-position: -452px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-9 {
+  background-position: -452px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-10 {
+  background-position: -452px -335px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-11 {
+  background-position: -452px -492px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-12 {
+  background-position: -658px -492px;
+  width: 151px;
+  height: 141px;
+}
+.sprite-13 {
+  background-position: -662px -20px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-14 {
+  background-position: -662px -178px;
+  width: 143px;
+  height: 143px;
+}
+.sprite-15 {
+  background-position: -662px -335px;
+  width: 143px;
+  height: 143px;
+}
+html, body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1em;
+  height: 100%; }
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  background: #262626; }
+
+:focus {
+  outline: none; }
+
+.application {
+  position: relative;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
+
+.content {
+  height: 100%; }
+
+.dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  background: -webkit-radial-gradient(#000, rgba(0, 0, 0, 0.9), #000);
+  background: radial-gradient(#000, rgba(0, 0, 0, 0.9), #000); }
+  .dialog .window {
+    background: #444;
+    border: 2px solid #828282;
+    font-size: 18px;
+    padding: 20px;
+    color: #fff; }
+    .dialog .window .button {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 20px 0px 0px 0px;
+      padding: 5px 10px;
+      border: 1px solid #fff; }
+      .dialog .window .button:focus {
+        background: #fff;
+        color: #000; }
+
+.home-screen {
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .home-screen--background {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(#111, rgba(3, 3, 3, 0.5), #111), url(assets/bg.jpg);
+    background-image: linear-gradient(#111, rgba(3, 3, 3, 0.5), #111), url(assets/bg.jpg);
+    background-position: 0px 0px;
+    background-size: cover;
+    -webkit-filter: sepia(60%) blur(3px);
+            filter: sepia(60%) blur(3px); }
+  .home-screen--launcher {
+    position: relative;
+    text-align: center;
+    z-index: 5;
+    width: 100%;
+    padding: 60px 0px 0px 0px;
+    height: 260px;
+    overflow-x: hidden;
+    white-space: nowrap; }
+    .home-screen--launcher > div {
+      display: inline-block;
+      position: relative;
+      width: 138px;
+      height: 138px;
+      margin: 0 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid transparent;
+      -webkit-filter: sepia(40%);
+              filter: sepia(40%);
+      -webkit-transition: all .2s ease;
+      transition: all .2s ease;
+      -webkit-transform: scale(1.4);
+              transform: scale(1.4);
+      z-index: 5; }
+      .home-screen--launcher > div[tabindex] {
+        box-shadow: 0px 0px 4px #222; }
+        .home-screen--launcher > div[tabindex]:before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+          content: ' ';
+          display: block;
+          background: -webkit-radial-gradient(rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0));
+          background: radial-gradient(rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0)); }
+      .home-screen--launcher > div.nobg {
+        background: none; }
+      .home-screen--launcher > div:focus {
+        -webkit-transform: scale(1.8);
+                transform: scale(1.8);
+        -webkit-filter: sepia(0);
+                filter: sepia(0);
+        border: 2px solid #fff;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        z-index: 10; }
+      .home-screen--launcher > div > .icons {
+        position: relative;
+        left: -4px;
+        top: -2px; }
+
+.toolbar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5; }
+  .toolbar .settings {
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    box-shadow: 0px 0px 4px #000;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border: 2px solid #111; }
+    .toolbar .settings:focus {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+
+.weather-widget {
+  position: absolute;
+  right: 20px; }
+  .weather-widget .clock {
+    display: inline-block;
+    color: #fff;
+    font-size: 70px;
+    font-weight: 300;
+    border-right: 1px solid #444;
+    margin: 0px 20px;
+    padding: 0px 20px; }
+    .weather-widget .clock span {
+      font-size: 20px; }
+  .weather-widget .wi {
+    color: #fff;
+    font-size: 64px;
+    margin-right: 10px; }
+  .weather-widget .info {
+    padding-top: 20px;
+    display: inline-block;
+    color: #fff;
+    font-size: 28px; }
+    .weather-widget .info > strong {
+      font-size: 16px; }
