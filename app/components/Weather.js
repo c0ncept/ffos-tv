@@ -60,11 +60,12 @@ const WeatherComponent = Cream.extend({
   _namespace: 'components.weather',
 
   init () {
+    const p = window.location.protocol;
     /* global fetch */
-    fetch('//freegeoip.net/json/')
+    fetch(p + '//freegeoip.net/json/')
       .then((resp) => resp.json())
       .then((ipdata) => {
-        fetch('//api.openweathermap.org/data/2.5/weather?q=' +
+        fetch(p + '//api.openweathermap.org/data/2.5/weather?q=' +
           ipdata.country_code.toLowerCase() + ',' + ipdata.city +
           '&units=imperial' + '&appid=558bdce4b8d202bebd12734ff3582c27')
           .then((resp) => resp.json())
