@@ -1,0 +1,72 @@
+
+.home-screen
+  height: 100%
+  position: relative
+  display: flex
+  align-items: center
+  flex-direction: row
+
+  &--background
+    z-index: 2
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    background-image: linear-gradient(#111, rgba(3, 3, 3, 0.5), #111), url('./sass/bg.jpg')
+    background-position: 0px 0px
+    background-size: cover
+    filter: sepia(60%) blur(3px)
+
+  &--launcher
+    position: relative
+    text-align: center
+    z-index: 5
+    width: 100%
+    padding: 60px 0px 0px 0px
+    height: 260px
+    overflow-x: hidden
+    white-space: nowrap
+
+    & > div
+      display: inline-block
+      position: relative
+      width: 138px
+      height: 138px
+      margin: 0 30px
+      border-radius: 50%
+      overflow: hidden
+      border: 2px solid transparent
+      filter: sepia(40%)
+      transition: all .2s ease
+      transform: scale(1.4)
+      z-index: 5
+
+      &[tabindex]
+        box-shadow: 0px 0px 4px #222
+        &:before
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          z-index: 5
+          content: ' '
+          display: block
+          background: radial-gradient(rgba(255,255,255, 0.3), rgba(0, 0, 0, 0), rgba(255,255,255,0))
+
+      &.nobg
+        background: none
+
+      &:focus
+        transform: scale(1.8)
+        filter: sepia(0)
+        border: 2px solid #fff
+        transition: all .2s ease
+        z-index: 10
+
+      & > .icons
+        position: relative
+        left: -4px
+        top: -2px
+
